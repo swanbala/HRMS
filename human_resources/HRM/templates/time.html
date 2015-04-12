@@ -1,0 +1,41 @@
+{%extends "manager.html"%}
+
+{% block rside%}
+<form action="" method="post">
+<div>
+<select id="level" name="level">
+  <option value="1">总经理</option>
+  <option value="2">经理</option>
+  <option value="3">组长</option>
+  <option value="4">普通员工</option>
+  <option value="5">试用员工</option>
+</select>
+</div>
+<div>上午签到：<input  type="time" name="mor_in" id="mor_in"></div>
+<div>上午签离：<input  type="time" name="mor_off" id="mor_off"></div>
+<div>下午签到：<input  type="time" name="aft_in" id="aft_in"></div>
+<div>下午签离：<input  type="time" name="aft_off" id="aft_off"></div>
+<button class="button" id="submit" type="submit" >确认</button>
+</form>
+<div>{{result}}</div>
+<!-- <table>
+  <tr>
+    <th>级别</th>
+    <th>上午签到</th>
+    <th>上午签离</th>
+    <th>下午签到</th>
+    <th>下午签离</th>
+  </tr>
+  {% for user in time_t%}
+  <tr>
+    <td>{{user.level}}</td>
+    <td>{{user.morning_sign_in}}</td>
+    <td>{{user.morning_sign_off}}</td>
+    <td>{{user.afternoon_sign_in}}</td>
+    <td>{{user.afternoon_sign_off}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+-->
+{% endblock %}

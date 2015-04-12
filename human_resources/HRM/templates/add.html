@@ -1,0 +1,33 @@
+{% extends "manager.html" %}
+
+{% block rside %}
+<form action="" method="post" id="form">
+       	<div>编号：<input class="text_value" value="" name="username" type="text" id="username"></div>
+       	<div>姓名：<input class="text_value" value="" name="name" type="text" id="name"></div>
+             <div>密码：<input class="text_value" value="" name="password" type="password" id="password"></div>
+            <div>级别：
+				<select name="level">
+				<option value=1>总经理</option>
+				<option value=2>项目经理</option>
+				<option value=3>组长</option>
+				<option value=4>普通员工</option>
+				<option value=5>试用员工</option>
+				</select></div>
+            <div>性别：<br />
+            			男：<input type="radio" checked="checked" name="Sex" value="M" /><br />
+						女：<input type="radio" name="Sex" value="F" /></div>
+            <div>邮箱：<input class="text_value" value="" name="mail" type="text" id="mail"></div>
+            <div>电话：<input class="text_value" value="" name="tel" type="text" id="tel"></div>
+            <div>上司：<input class="text_value" value="" name="superior" type="text" id="superior"></div>
+            <div>部门：<br />
+            			人事部：<input type="radio" checked="checked" name="department" value="pensonnel" /><br />
+						技术部：<input type="radio" name="department" value="Technology" /></div>
+			<div>基本工资：<input class="text_value" value="" name="basic" type="text" id="basic"></div>
+
+        <div><button class="button" id="submit" type="submit">注册</button></div>
+        <div>{{error}}</div>
+
+    </form>
+    
+ <div>{{reason}}</div>
+{% endblock%}

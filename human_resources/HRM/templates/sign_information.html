@@ -1,0 +1,21 @@
+{% extends "manager.html" %}
+
+{% block rside%}
+<table>
+  <tr>
+    <th>id</th>
+    <th>道勤次数</th>
+    <th>迟到次数</th>
+    <th>外出次数</th>
+  </tr>
+{% for user in sign%}
+  <tr>
+    <td>{{user.id}}</td>
+    <td>{{user.num_sign_in}}</td>
+    <td>{{user.num_late}}</td>
+    <td>{{user.num_out}}</td>
+  </tr>
+ {% endfor %}
+</table>
+
+{% endblock %}

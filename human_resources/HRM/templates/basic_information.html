@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block rside %}
+<table stlyes:"	cellpadding:10px;">
+  <tr >
+    <td>姓名：{{name}}</td>
+    <td>编号：{{id}}</td>
+    <td>邮箱：{{email}}</td>
+    <td>电话：{{tel}}</td>
+  </tr>
+  <tr >
+    <td>员工级别：{{level}}</td>
+    <td>进入时间：{{date}}</td>
+    <td>直接上司：{{superior}}</td>
+    <td>所在部门：{{department}}</td>
+  </tr>
+</table>
+{% endblock%}

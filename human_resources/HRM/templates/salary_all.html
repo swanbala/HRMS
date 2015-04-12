@@ -1,0 +1,21 @@
+{% extends "manager.html" %}
+
+{% block rside %}
+<table>
+  <tr>
+    <th>id</th>
+    <th>基本工资</th>
+    <th>奖金</th>
+  </tr>
+{% for user in pay%}
+  <tr>
+    <td>{{user.id}}</td>
+    <td>{{user.basic}}</td>
+    <td>{{user.bonus}}</td>
+  </tr>
+{% endfor %}
+</table>
+
+
+
+{% endblock %}

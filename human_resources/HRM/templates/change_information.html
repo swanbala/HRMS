@@ -1,0 +1,53 @@
+{% extends "manager.html"%}
+
+{% block rside %}
+<table border="1" cellspacing="0">
+  <tr>
+    <th >id</th>
+    <th>name</th>
+    <!-- <th>level</th>-->
+    <th>mail</th>
+    <th>telphone</th>
+    <th>data</th>
+    <th>password</th>
+    <th>delete</th>
+    <th>change</th>
+    
+  </tr>
+  
+{% for user in staff %} 
+	{% ifnotequal  user.id 2014000 %}
+		{% ifnotequal user.if_delete 1 %}
+		{% ifequal user.id get_id %}
+		<form action="" method="post" id="form">
+			<tr>
+		    <td>{{user.id}}</td>
+		    <td><input class="text_value" value="{{user.name}}" name="name" type="text" id="name"></td>
+		    <td><input class="text_value" value="{{user.mail}}" name="mail" type="text" id="mail"></td>
+		    <td><input class="text_value" value="{{user.tel}}" name="tel" type="text" id="tel"></td>
+		    <td>{{user.data}}</td>
+		    <td><input class="text_value" value="{{user.passwd}}" name="password" type="password" id="password"></td>
+		    <td><a href="http://127.0.0.1:8000/delete_staff/{{user.id}}" target="_parent">delete</a></td>
+		    <td><button class="button" id="submit" type="submit">Confirm</button></td>  
+  			</tr>
+  		 </form>
+		{% else %}
+		  <tr>
+		    <td>{{user.id}}</td>
+		    <td>{{user.name}}</td>
+		    <td>{{user.mail}}</td>
+		    <td>{{user.tel}}</td>
+		    <td>{{user.data}}</td>
+		    <td>{{user.passwd}}</td>
+		    <td><a href="http://127.0.0.1:8000/delete_staff/{{user.id}}" target="_parent">delete</a></td>
+		    <td><a href="http://127.0.0.1:8000/change_information/{{user.id}}" target="_parent">change</a></td>
+		    
+		  </tr>
+		  {% endifequal %}
+{% endifnotequal%}
+{% endifnotequal%}
+{% endfor%}
+
+</table>
+<div>{{result}}</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "manager.html"%}
+
+{% block rside %}
+<table border="1" cellspacing="0">
+  <tr>
+    <th >id</th>
+    <th>name</th>
+    <th>mail</th>
+    <th>telphone</th>
+    <th>data</th>
+    <th>delete</th>
+    <th>change</th>
+  </tr>
+  
+{% for user in staff %} 
+{% ifnotequal  user.id 2014000 %}
+{% ifnotequal user.if_delete 1 %}
+  <tr>
+    <td>{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.mail}}</td>
+    <td>{{user.tel}}</td>
+    <td>{{user.data}}</td>
+    <td><a href="http://127.0.0.1:8000/delete_staff/{{user.id}}" target="_parent">delete</a></td>
+    <td><a href="http://127.0.0.1:8000/change_information/{{user.id}}" target="_parent">change</a></td>
+    
+  </tr>
+{% endifnotequal%}
+{% endifnotequal%}
+{% endfor%}
+
+</table>
+{{result}}
+{% endblock %}

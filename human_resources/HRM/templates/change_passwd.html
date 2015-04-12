@@ -1,0 +1,15 @@
+{% if if_admin %}
+	{% extends "manager.html" %}
+{% else %}
+	{% extends "base.html" %}
+{% endif %}
+
+
+{% block rside %}
+<div>{{error}}</div>
+<form action="" method="post" id="form">
+       <div style="margin:5px">旧密码：<input class="text_value" value="" name="old_passwd" type="password" id="old_passwd"></div>
+       <div style="margin:5px">新密码：<input class="text_value" value="" name="new_passwd" type="password" id="new_passwd"></div>
+    <button class="button" id="submit" type="submit" style="margin:5px">提交</button>
+    </form>
+{% endblock %}

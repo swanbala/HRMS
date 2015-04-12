@@ -1,0 +1,30 @@
+{% extends "manager.html"%}
+
+{% block rside%}
+<table >
+  <tr>
+  	<th>id</th>
+    <th>name</th>
+    <th>sex</th>
+    <th>mail</th>
+    <th>telphone</th>
+    <th>data</th>
+    <th>recorvery</th>
+  </tr>
+  {% for user in exit_staff%}
+  <tr>
+  	<td>{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.sex}}</td>
+    <td>{{user.mail}}</td>
+    <td>{{user.tel}}</td>
+    <td>{{user.data}}</td>
+	{% ifequal user.if_delete 0 %}
+    <td><a href="http://127.0.0.1:8000/recorvery_former/{{user.id}}">recorvery</a></td>
+    {%else%}
+    <td></td>
+    {% endifequal %} </tr>
+  {% endfor %}
+<a href="http://127.0.0.1:8000/sure_former/">确定删除</a>
+{{result}}
+{%endblock %}

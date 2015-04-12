@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% load i18n staticfiles  %}
+<link rel="stylesheet" type="text/css" href="{% static "administrator.css" %}" />
+
+<title>人力资源管理系统</title>
+
+</head>
+<body>
+  <div id="head">
+    <div id="words"></div>
+  </div>
+  <div class="main">
+    <div id="lside">
+<ul class="users">
+    <li class="point">用户菜单</li>
+    <li><a href="http://127.0.0.1:8000/change_passwd" target="_parent">修改密码</a></li>
+    <li><a href="http://127.0.0.1:8000/logout" target="_parent">退出系统</a></li>
+    </ul>
+    <ul class="person">
+    <li class="point">个人信息</li>
+    <li><a href="http://127.0.0.1:8000/basic_information" target="_parent">基本信息</a></li>
+    <li><a href="http://127.0.0.1:8000/ability_work" target="_parent">工作能力</a></li>
+    </ul>
+    <ul class="attendance">
+    <li class="point">到勤信息</li>
+    <li><a href="http://127.0.0.1:8000/sign_in" target="_parent">签到签离</a></li>
+    <li><a href="http://127.0.0.1:8000" target="_parent">申请外出</a></li>
+    </ul>
+    <ul class="money">
+    <li class="point">工资</li>
+    <li><a href="http://127.0.0.1:8000/salary" target="_parent">查看工资</a></li>
+    </ul>
+ </div>
+    <div id="rside">{% block rside %}{% endblock %}</div>
+  </div>
+  {% csrf_token %}
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% load i18n staticfiles  %}
+<link rel="stylesheet" type="text/css" href="{% static "administrator.css" %}" />
+
+<title>人力资源管理系统</title>
+
+</head>
+<body>
+  <div id="head">
+    <div id="words"></div>
+  </div>
+    <div id="rside">{{ error }}
+     <a href="http://127.0.0.1:8000/login" target="_parent" padding:8px>登录</a>
+    </div>
+  {% csrf_token %}
+
+</body>
+</html>
